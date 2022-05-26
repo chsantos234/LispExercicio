@@ -1,0 +1,29 @@
+(setq pn '("marca" "modelo" "ano" "placa"))
+
+(defvar lista)
+(setq lista (list pn))
+
+(defun listacarro nil 
+    (loop
+        (setq marca (read))
+        (setq modelo (read))
+        (setq ano (read))
+        (setq placa (read))
+        (cond
+            ((string= marca "fim")
+                (setq lista (cdr lista))
+            ;para finalizar: "fim" "fim" "fim" "fim"
+                (print "fim das entradas")
+                (return)
+            )
+            (
+                (setq pn (list marca modelo ano placa))
+                (setq lista (append lista (list pn)))
+            )
+        )
+    )
+)
+
+
+(listacarro)
+(print lista)
