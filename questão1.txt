@@ -1,0 +1,26 @@
+(defun primo (num)
+  (setq count 0)
+  
+  (loop for i from 1 to num do 
+    (if (= (mod num i) 0) (incf count 1))
+  )
+
+  (if(= count 2)(return-from primo 1)(return-from primo 2))
+
+)
+
+(defun primo_nth (num)
+  (setq count2 2)
+  (setq primoCounter 0)
+  (loop 
+  
+  (if (= (primo count2) 1)(incf primoCounter 1))
+  (if (= primoCounter num)(return-from primo_nth count2))
+  (incf count2 1)
+  
+  )
+)
+ 
+(setq n (read))
+
+(format t "o primo de número ~D é o ~D" n (primo_nth n))
