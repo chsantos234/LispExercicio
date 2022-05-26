@@ -1,0 +1,20 @@
+(defun delta-calc (a b c)
+  (- (expt b 2) (* a c 4))
+)
+
+
+(defun achar-raizes (a b delta)
+  (list 
+    (/ (- delta b) (* a 2)) (/ (- (+ delta b)) (* a 2))
+  )
+
+)
+
+(defun funcQuad (a b c) 
+  (setq delta (sqrt (delta-calc a b c)))
+
+  (achar-raizes a b delta)
+
+)
+
+(format t "delta = ~D e raízes + e - : ~D" (delta-calc 1 -1 -12) (funcQuad 1 -1 -12))
