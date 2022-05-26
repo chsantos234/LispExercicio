@@ -1,0 +1,13 @@
+(setq n (read))
+
+(defun fatorial (num)
+
+    (if (< num 2)
+    
+    (return-from fatorial 1)
+    
+    (* num (fatorial (- num 1)))
+    )
+)
+
+(format t "fatorial de ~D é ~D" n (fatorial n))
